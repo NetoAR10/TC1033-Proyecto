@@ -4,7 +4,6 @@ using namespace std;
 
 #include <string>
 
-#include "Transaccion.h"
 
 class Cuenta {
     private:

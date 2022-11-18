@@ -3,7 +3,6 @@ using namespace std;
 
 #include <string>
 
-#include "Transaccion.h"
 
 class Categoria {
     private:
