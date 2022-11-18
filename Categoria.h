@@ -18,7 +18,7 @@ class Categoria {
         transaccion.setMonto(0.0);
     }
 
-    Categoria(string nom, float bal, float trans) {
+    Categoria(string nom, float bal, Transaccion trans) {
         nombre = nom;
         balance = bal;
         transaccion = trans;
