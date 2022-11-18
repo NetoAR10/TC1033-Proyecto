@@ -1,7 +1,10 @@
-#include <iostream>
 using namespace std;
 
+#include <iostream>
+
 #include <string>
+
+#include "Transaccion.h"
 
 class Cuenta {
     private:
@@ -9,7 +12,7 @@ class Cuenta {
     string tipo;
     string moneda;
     float balance;
-    float transaccion;
+    Transaccion transaccion;
 
     public: 
 
@@ -18,10 +21,10 @@ class Cuenta {
         tipo = "debito";
         moneda = "pesos";
         balance = 0.0;
-        transaccion = 0;
+        transaccion.setMonto(0.0);
     }
 
-    Cuenta(string nom, string tip, string mon, float bal, float trans) {
+    Cuenta(string nom, string tip, string mon, float bal, Transaccion trans) {
         nombre = nom;
         tipo = tip;
         moneda = mon;
@@ -45,7 +48,7 @@ class Cuenta {
         return balance;
     }
 
-    float getTransacciones() {
+    Transaccion getTransacciones() {
         return transaccion;
     }
 
@@ -65,7 +68,7 @@ class Cuenta {
         balance = bal;
     }
 
-    void setTransaccion(float trans) {
+    void setTransaccion(Transaccion trans) {
         transaccion = trans;
     }
 
@@ -74,6 +77,6 @@ class Cuenta {
             cout << "Tipo: " << tipo << endl;
             cout << "Moneda: " << moneda << endl;
             cout << "Balance: " << balance << endl;
-            cout << "Transaccion: " << transaccion << endl;
+            cout << "Transaccion: " << transaccion.getMonto() << endl;
         }
 };

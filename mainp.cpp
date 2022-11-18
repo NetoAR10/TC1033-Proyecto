@@ -11,10 +11,10 @@ int main() {
     Transaccion trans1("trans1", 123.45, "10/11/2022");
     trans1.imprimeDatos();
 
-    Cuenta Bancomer("Bancomer", "debito", "pesos", 1000, 200);
+    Cuenta Bancomer("Bancomer", "debito", "pesos", 1000, trans1);
     Bancomer.imprimeDatos();
 
-    Categoria juegos("CSGO", 500, -200);
+    Categoria juegos("CSGO", 500, trans1);
     juegos.imprimeDatos();
 
     return 0;

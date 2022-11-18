@@ -3,17 +3,19 @@ using namespace std;
 
 #include <string>
 
+#include "Transaccion.h"
+
 class Categoria {
     private:
     string nombre;
     float balance;
-    float transaccion;
+    Transaccion transaccion;
 
     public: 
     Categoria() {
         nombre = "cat1";
         balance = 0.0;
-        transaccion = 0;
+        transaccion.setMonto(0.0);
     }
 
     Categoria(string nom, float bal, float trans) {
@@ -30,7 +32,7 @@ class Categoria {
         return balance;
     }
 
-    float getTransaccion() {
+    Transaccion getTransaccion() {
         return transaccion;
     }
 
@@ -42,14 +44,14 @@ class Categoria {
         balance = bal;
     }
 
-    void setTransaccion(float trans) {
+    void setTransaccion(Transaccion trans) {
         transaccion = trans;
     }
 
     void imprimeDatos() {
             cout << "Nombre: " << nombre << endl;
             cout << "Balance: " << balance << endl;
-            cout << "Transaccion: " << transaccion << endl;
+            cout << "Transaccion: " << transaccion.getMonto() << endl;
         }
 
 };
