@@ -4,26 +4,26 @@ using namespace std;
 
 #include <string>
 
-
-class Cuenta {
-    private:
+class Cuenta
+{
+private:
     string nombre;
     string tipo;
     string moneda;
     float balance;
     Transaccion transaccion;
 
-    public: 
-
-    Cuenta() {
+public:
+    Cuenta()
+    {
         nombre = "trans1";
         tipo = "debito";
         moneda = "pesos";
         balance = 0.0;
-        transaccion.setMonto(0.0);
     }
 
-    Cuenta(string nom, string tip, string mon, float bal, Transaccion trans) {
+    Cuenta(string nom, string tip, string mon, float bal, Transaccion trans)
+    {
         nombre = nom;
         tipo = tip;
         moneda = mon;
@@ -31,51 +31,61 @@ class Cuenta {
         transaccion = trans;
     }
 
-    string getNombre() {
+    string getNombre()
+    {
         return nombre;
     }
 
-    string getTipo() {
+    string getTipo()
+    {
         return tipo;
     }
 
-    string getMoneda() {
+    string getMoneda()
+    {
         return moneda;
     }
 
-    float getBalance() {
+    float getBalance()
+    {
         return balance;
     }
 
-    Transaccion getTransacciones() {
+    Transaccion getTransacciones()
+    {
         return transaccion;
     }
 
-    void setNombre(string nom) {
+    void setNombre(string nom)
+    {
         nombre = nom;
     }
 
-    void setTipo(string tip) {
+    void setTipo(string tip)
+    {
         tipo = tip;
     }
 
-    void setMoneda(string mon) {
+    void setMoneda(string mon)
+    {
         moneda = mon;
     }
 
-    void setBalance(float bal) {
+    void setBalance(float bal)
+    {
         balance = bal;
     }
 
-    void setTransaccion(Transaccion trans) {
+    void setTransaccion(Transaccion trans)
+    {
         transaccion = trans;
     }
 
-    void imprimeDatos() {
-            cout << "Nombre: " << nombre << endl;
-            cout << "Tipo: " << tipo << endl;
-            cout << "Moneda: " << moneda << endl;
-            cout << "Balance: " << balance << endl;
-            cout << "Transaccion: " << transaccion.getMonto() << endl;
-        }
+    void imprimeDatos()
+    {
+        cout << "Nombre: " << nombre << endl;
+        cout << "Tipo: " << tipo << endl;
+        cout << "Moneda: " << moneda << endl;
+        cout << "Balance: " << balance << endl;
+    }
 };

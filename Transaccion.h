@@ -5,49 +5,47 @@ using namespace std;
 class Transaccion {
     private:
     string nombre;
-    float monto;
     string fecha;
+    float monto;
 
     public: 
     Transaccion() {
         nombre = "trans1";
-        monto = 0.0;
         fecha = "01/01/2000";
     }
 
-    Transaccion(string nom, float mont, string fech) {
+    Transaccion(string nom, string fech, float mont) {
         nombre = nom;
-        monto = mont;
         fecha = fech;
+        monto = mont;
     }
 
     string getNombre() {
         return nombre;
     }
 
-    float getMonto() {
-        return monto;
-    }
-
     string getFecha() {
         return fecha;
+    }
+
+    float getMonto() {
+        return monto;
     }
 
     void setNombre(string nom) {
         nombre = nom;
     }
 
-    void setMonto(float mont) {
-        monto = mont;
-    }
-
     void setFecha(string fech) {
         fecha = fech;
     }
 
+    float setMonto(float mont) {
+        monto = mont;
+    }
+
     void imprimeDatos() {
             cout << "Nombre: " << nombre << endl;
-            cout << "Monto: " << monto << endl;
             cout << "Fecha: " << fecha << endl;
         }
 };
