@@ -8,21 +8,19 @@ class Categoria
 private:
     string nombre;
     float balance;
-    Transaccion transaccion;
+    Transaccion transacciones[10];
 
 public:
     Categoria()
     {
         nombre = "cat1";
         balance = 0.0;
-        transaccion.setMonto(0.0);
     }
 
     Categoria(string nom, float bal, Transaccion trans)
     {
         nombre = nom;
         balance = bal;
-        transaccion = trans;
     }
 
     string getNombre()
@@ -35,9 +33,9 @@ public:
         return balance;
     }
 
-    Transaccion getTransaccion()
+    Transaccion getTransaccion(int posicion)
     {
-        return transaccion;
+        return transacciones[posicion];
     }
 
     void setNombre(string nom)
@@ -50,15 +48,14 @@ public:
         balance = bal;
     }
 
-    void setTransaccion(Transaccion trans)
+    void setTransaccion(Transaccion trans, int posicion)
     {
-        transaccion = trans;
+        transacciones[posicion] = trans;
     }
 
     void imprimeDatos()
     {
         cout << "Nombre: " << nombre << endl;
         cout << "Balance: " << balance << endl;
-        cout << "Transaccion: " << transaccion.getMonto() << endl;
     }
 };

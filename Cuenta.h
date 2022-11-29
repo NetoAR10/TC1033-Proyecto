@@ -11,7 +11,7 @@ private:
     string tipo;
     string moneda;
     float balance;
-    Transaccion transaccion;
+    Transaccion transacciones[10];
 
 public:
     Cuenta()
@@ -22,13 +22,12 @@ public:
         balance = 0.0;
     }
 
-    Cuenta(string nom, string tip, string mon, float bal, Transaccion trans)
+    Cuenta(string nom, string tip, string mon, float bal)
     {
         nombre = nom;
         tipo = tip;
         moneda = mon;
         balance = bal;
-        transaccion = trans;
     }
 
     string getNombre()
@@ -51,9 +50,9 @@ public:
         return balance;
     }
 
-    Transaccion getTransacciones()
+    Transaccion getTransaccion(int posicion)
     {
-        return transaccion;
+        return transacciones[posicion];
     }
 
     void setNombre(string nom)
@@ -76,9 +75,9 @@ public:
         balance = bal;
     }
 
-    void setTransaccion(Transaccion trans)
+    void setTransaccion(Transaccion trans, int posicion)
     {
-        transaccion = trans;
+        transacciones[posicion] = trans;
     }
 
     void imprimeDatos()

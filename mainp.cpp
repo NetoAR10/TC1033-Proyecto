@@ -17,8 +17,8 @@ void menu()
 {
     cout << "Menu: \n";
     cout << "1) Crear Cuenta \n";
-    cout << "2) Ingresar Transacción \n";
-    cout << "3) ingresar Categoría \n";
+    cout << "2) Ingresar Transaccion \n";
+    cout << "3) Ingresar Categoria \n";
     cout << "4) Mostrar Transacción \n";
     cout << "5) Mostrar Categoria \n";
     cout << "6) Salir \n";
@@ -29,10 +29,7 @@ int main()
 
     int opcion = 0;
 
-    Transaccion trans1("trans1", "10/11/2022", 1234.5);
-    // trans1.imprimeDatos();
-
-    Cuenta bancomer("Bancomer", "debito", "pesos", 1000, trans1);
+    Cuenta bancomer("Bancomer", "debito", "pesos", 1000);
     // bancomer.imprimeDatos();
 
     while (opcion < 7 && opcion > -1)
@@ -57,12 +54,12 @@ int main()
             if (temp_monto > 0)
             {
                 Ingreso temp_ingreso(temp_nombre, temp_fecha, temp_monto);
-                bancomer.setTransaccion(temp_ingreso);
+                bancomer.setTransaccion(temp_ingreso, 0);
             }
             else
             {
                 Egreso temp_egreso(temp_nombre, temp_fecha, temp_monto);
-                bancomer.setTransaccion(temp_egreso);
+                bancomer.setTransaccion(temp_egreso, 0);
             }
 
             break;
@@ -81,8 +78,6 @@ int main()
         }
     }
 
-    Categoria juegos("CSGO", 500, trans1);
-    juegos.imprimeDatos();
-
+ 
     return 0;
 }
