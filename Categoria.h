@@ -2,15 +2,17 @@
 using namespace std;
 
 #include <string>
+#include <vector>
 
 class Categoria
 {
 private:
     string nombre;
     float balance;
-    Transaccion transacciones[10];
+    vector<Transaccion *> transacciones;
 
 public:
+    //constructores
     Categoria()
     {
         nombre = "cat1";
@@ -23,6 +25,7 @@ public:
         balance = bal;
     }
 
+    //getters
     string getNombre()
     {
         return nombre;
@@ -33,11 +36,12 @@ public:
         return balance;
     }
 
-    Transaccion getTransaccion(int posicion)
+    vector<Transaccion *> getTransaccion()
     {
-        return transacciones[posicion];
+        return transacciones;
     }
 
+    //setters
     void setNombre(string nom)
     {
         nombre = nom;
@@ -48,14 +52,23 @@ public:
         balance = bal;
     }
 
-    void setTransaccion(Transaccion trans, int posicion)
+    void setTransaccion(Transaccion *trans) //funcion para sumar o restar el balance establecido de la categoria
     {
-        transacciones[posicion] = trans;
+        float balance_actual = getBalance(); //consigue el balance antes del cambio
+        balance_actual = balance_actual + trans->getMonto(); //suma o resta del monto pedido por el usuario
+        setBalance(balance_actual); //settea el balance actual
+        transacciones.push_back(trans); //agrega la transaccion al historial
     }
 
-    void imprimeDatos()
+    void imprimeDatos() //imprime los datos del objeto y todas las transacciones pasadas
     {
         cout << "Nombre: " << nombre << endl;
         cout << "Balance: " << balance << endl;
+
+        for (int i = 0; i < transacciones.size(); i++)
+        {
+            cout << "Transaccion " << i << ": ";
+            transacciones[i]->imprimeDatos();
+        }
     }
 };

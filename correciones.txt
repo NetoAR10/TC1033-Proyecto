@@ -1,0 +1,6 @@
+Correcciones.txt
+
+Avance 2 SICT0302A
+"Utilizo el concepto de herencia en el diagrama de clases de manera adecuada."
+-Ya esta actualizado el diagrama de clases en el repo
+

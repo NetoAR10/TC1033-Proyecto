@@ -7,6 +7,7 @@ using namespace std;
 class Ingreso : public Transaccion
 {
 public:
+    //constructores
     Ingreso()
     {
     }
@@ -15,7 +16,7 @@ public:
     {
     }
 
-    bool checarPositivo()
+    bool checarPositivo() //checa si la cantidad es positiva
     {
         if (getMonto() > 0)
         {
@@ -25,5 +26,10 @@ public:
         {
             return false;
         }
+    }
+
+    void imprimeDatos() //si una cantidad metida por el usuario es positiva entonces la imprime como ingreso 
+    {
+        cout << "Ingreso -> " << getMonto() << endl;
     }
 };

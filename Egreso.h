@@ -7,6 +7,7 @@ using namespace std;
 class Egreso : public Transaccion
 {
 public:
+    //constructores
     Egreso()
     {
     }
@@ -15,7 +16,7 @@ public:
     {
     }
 
-    bool checarNegativo()
+    bool checarNegativo() //checa si la cantidad es negativa
     {
         if (getMonto() < 0)
         {
@@ -25,5 +26,10 @@ public:
         {
             return false;
         }
+    }
+
+    void imprimeDatos() //si una cantidad metida por el usuario es negativa entonces la imprime como egreso
+    {
+        cout << "Egreso -> " << getMonto() << endl;
     }
 };

@@ -2,50 +2,62 @@ using namespace std;
 #include <iostream>
 #include <string>
 
-class Transaccion {
-    private:
+class Transaccion
+{
+private:
     string nombre;
     string fecha;
     float monto;
 
-    public: 
-    Transaccion() {
+public:
+    //constructores
+    Transaccion()
+    {
         nombre = "trans1";
         fecha = "01/01/2000";
     }
 
-    Transaccion(string nom, string fech, float mont) {
+    Transaccion(string nom, string fech, float mont)
+    {
         nombre = nom;
         fecha = fech;
         monto = mont;
     }
 
-    string getNombre() {
+    //getters
+    string getNombre()
+    {
         return nombre;
     }
 
-    string getFecha() {
+    string getFecha()
+    {
         return fecha;
     }
 
-    float getMonto() {
+    float getMonto()
+    {
         return monto;
     }
 
-    void setNombre(string nom) {
+    //setters
+    void setNombre(string nom)
+    {
         nombre = nom;
     }
 
-    void setFecha(string fech) {
+    void setFecha(string fech)
+    {
         fecha = fech;
     }
 
-    float setMonto(float mont) {
+    float setMonto(float mont)
+    {
         monto = mont;
     }
 
-    void imprimeDatos() {
-            cout << "Nombre: " << nombre << endl;
-            cout << "Fecha: " << fecha << endl;
-        }
+    virtual void imprimeDatos() //metodo virtual para que las clases hijas lo implementen a su gusto
+    {
+        cout << "Imprimiendo transaccion" << endl;
+    }
 };
