@@ -9,7 +9,6 @@ Los objetivos de este programa son:
 
 Los detalles clave de este programa son:
   - fecha de cada transacción
-  - guardado de historial por un archivo
   - acceso al historial de cada tipo de transacción
   - acceso a diferentes cuentas con sus respectivos gastos
   - separación de gastos por categorías
@@ -17,3 +16,9 @@ Los detalles clave de este programa son:
 
 ## Funcionalidad
 El programa inicialmente contará con un menú donde mostrará todas las opciones y cada submenú ejecutará cada una de las características previamente mencionadas.
+No hay historial por archivos entonces se tiene que ingresar los datos cada vez que se corre el programa.
+
+## Correciones
+Avance 2: SICT0302A
+"Utilizo el concepto de herencia en el diagrama de clases de manera adecuada."
+-Ya esta actualizado el diagrama de clases en el repo
